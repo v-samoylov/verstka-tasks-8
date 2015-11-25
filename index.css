@@ -1,1 +1,34 @@
+img
+{
+    max-width: 15vw;
+    max-height: 23vh; 
+}
+
+input
+{
+    display: none;
+}
+
+#first:not(:checked) ~ .gallery .first,
+#second:not(:checked) ~ .gallery .second,
+#third:not(:checked) ~ .gallery .third,
+#fourth:not(:checked) ~ .gallery .fourth,
+#fifth:not(:checked) ~ .gallery .fifth,
+#sixth:not(:checked) ~ .gallery .sixth,
+#seventh:not(:checked) ~ .gallery .seventh
+{
+    transform: rotateY(45deg) skew(0, 5deg);
+    -webkit-transform: rotateY(45deg) skew(0, 5deg);
+    perspective: 300px;
+    transform-style: preserve-3d;
+    border: 1px solid black;
+    margin-left: -5vw;
+    z-index: -1;
+}
+
+div.gallery
+{
+    margin: 30vh auto auto 5vw;
+    max-width: 95vw;
+}
 
