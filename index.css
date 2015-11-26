@@ -1,7 +1,7 @@
-img
+
+body
 {
-    max-width: 15vw;
-    max-height: 23vh; 
+    background-color: #ddd;
 }
 
 input
@@ -9,26 +9,153 @@ input
     display: none;
 }
 
-#first:not(:checked) ~ .gallery .first,
-#second:not(:checked) ~ .gallery .second,
-#third:not(:checked) ~ .gallery .third,
-#fourth:not(:checked) ~ .gallery .fourth,
-#fifth:not(:checked) ~ .gallery .fifth,
-#sixth:not(:checked) ~ .gallery .sixth,
-#seventh:not(:checked) ~ .gallery .seventh
+label
 {
-    transform: rotateY(45deg) skew(0, 5deg);
-    -webkit-transform: rotateY(45deg) skew(0, 5deg);
-    perspective: 300px;
-    transform-style: preserve-3d;
-    border: 1px solid black;
-    margin-left: -5vw;
-    z-index: -1;
+    display: inline-block;
+    width: 16vw;
+    height: 16vw;
+    position: absolute;
+    background-color: #fff;
+    transform: rotateY(20deg) skew(0, 5deg);
+    -webkit-transform: rotateY(20deg) skew(0, 5deg);
+    box-shadow: 1px 1px 15px 2px #888;
+    transition-property: left, transform, -webkit-transform;
+    transition-timing-function: linear;
+    transition-duration: 0.7s, 0.7s, 0.7s;
+}
+
+img
+{
+    max-width: 100%;
+    max-height: 100%;
 }
 
 div.gallery
 {
-    margin: 30vh auto auto 5vw;
-    max-width: 95vw;
+    margin-top: 35vh;
+    position: relative;
+    perspective: 600px;
+    -webkit-perspective: 600px;
 }
 
+#first:checked ~ .gallery [for='first'] ~ label,
+#second:checked ~ .gallery [for='second'] ~ label,
+#third:checked ~ .gallery [for='third'] ~ label,
+#fourth:checked ~ .gallery [for='fourth'] ~ label,
+#fifth:checked ~ .gallery [for='fifth'] ~ label,
+#sixth:checked ~ .gallery [for='sixth'] ~ label,
+#seventh:checked ~ .gallery [for='seventh'] ~ label
+{
+    transform: rotateY(-20deg) skew(0, -5deg);
+    -webkit-transform: rotateY(-20deg) skew(0, -5deg);
+}
+
+#first:checked ~ .gallery [for='first'],
+#second:checked ~ .gallery [for='second'],
+#third:checked ~ .gallery [for='third'],
+#fourth:checked ~ .gallery [for='fourth'],
+#fifth:checked ~ .gallery [for='fifth'],
+#sixth:checked ~ .gallery [for='sixth'],
+#seventh:checked ~ .gallery [for='seventh']
+{
+    transform: rotateY(0) skew(0, 0);
+    -webkit-transform: rotateY(0) skew(0, 0);
+    z-index: 7;
+    left: 42vw;
+}
+
+#first:checked ~ .gallery [for='second'],
+#second:checked ~ .gallery [for='third'],
+#third:checked ~ .gallery [for='fourth'],
+#fourth:checked ~ .gallery [for='fifth'],
+#fifth:checked ~ .gallery [for='sixth'],
+#sixth:checked ~ .gallery [for='seventh']
+{
+    z-index: 6;
+    left: 48vw;
+}
+
+#first:checked ~ .gallery [for='third'],
+#second:checked ~ .gallery [for='fourth'],
+#third:checked ~ .gallery [for='fifth'],
+#fourth:checked ~ .gallery [for='sixth'],
+#fifth:checked ~ .gallery [for='seventh']
+{
+    z-index: 5;
+    left: 54vw;
+}
+
+#first:checked ~ .gallery [for='fourth'],
+#second:checked ~ .gallery [for='fifth'],
+#third:checked ~ .gallery [for='sixth'],
+#fourth:checked ~ .gallery [for='seventh']
+{
+    z-index: 4;
+    left: 60vw;
+}
+
+#first:checked ~ .gallery [for='fifth'],
+#second:checked ~ .gallery [for='sixth'],
+#third:checked ~ .gallery [for='seventh']
+{
+    z-index: 3;
+    left: 66vw;
+}
+
+#first:checked ~ .gallery [for='sixth'],
+#second:checked ~ .gallery [for='seventh']
+{
+    z-index: 2;
+    left: 72vw;
+}
+
+#first:checked ~ .gallery [for='seventh']
+{
+    z-index: 1;
+    left: 78vw;
+}
+
+#second:checked ~ .gallery [for='first'],
+#third:checked ~ .gallery [for='second'],
+#fourth:checked ~ .gallery [for='third'],
+#fifth:checked ~ .gallery [for='fourth'],
+#sixth:checked ~ .gallery [for='fifth'],
+#seventh:checked ~ .gallery [for='sixth']
+{
+    left: 36vw;
+}
+
+#third:checked ~ .gallery [for='first'],
+#fourth:checked ~ .gallery [for='second'],
+#fifth:checked ~ .gallery [for='third'],
+#sixth:checked ~ .gallery [for='fourth'],
+#seventh:checked ~ .gallery [for='fifth']
+{
+    left: 30vw;
+}
+
+#fourth:checked ~ .gallery [for='first'],
+#fifth:checked ~ .gallery [for='second'],
+#sixth:checked ~ .gallery [for='third'],
+#seventh:checked ~ .gallery [for='fourth']
+{
+    left: 24vw;
+}
+
+#fifth:checked ~ .gallery [for='first'],
+#sixth:checked ~ .gallery [for='second'],
+#seventh:checked ~ .gallery [for='third']
+{
+    left: 18vw;
+}
+
+#sixth:checked ~ .gallery [for='first'],
+#seventh:checked ~ .gallery [for='second']
+{
+    left: 12vw;
+}
+
+#seventh:checked ~ .gallery [for='first']
+{
+    left: 6vw;
+}
