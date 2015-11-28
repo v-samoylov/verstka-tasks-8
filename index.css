@@ -9,7 +9,7 @@ input
     display: none;
 }
 
-label
+.card
 {
     display: inline-block;
     width: 16vw;
@@ -22,6 +22,19 @@ label
     transition-property: left, transform, -webkit-transform;
     transition-timing-function: linear;
     transition-duration: 0.7s, 0.7s, 0.7s;
+}
+
+.card > label
+{
+    top: 0;
+    width: 16vw;
+    height: 16vw;
+    position: absolute;
+}
+
+.card label:not(.hover)
+{
+    display: block;
 }
 
 img
@@ -38,25 +51,25 @@ div.gallery
     -webkit-perspective: 600px;
 }
 
-#first:checked ~ .gallery [for='first'] ~ label,
-#second:checked ~ .gallery [for='second'] ~ label,
-#third:checked ~ .gallery [for='third'] ~ label,
-#fourth:checked ~ .gallery [for='fourth'] ~ label,
-#fifth:checked ~ .gallery [for='fifth'] ~ label,
-#sixth:checked ~ .gallery [for='sixth'] ~ label,
-#seventh:checked ~ .gallery [for='seventh'] ~ label
+#card1:checked ~ .gallery .card.first ~ .card,
+#card2:checked ~ .gallery .card.second ~ .card,
+#card3:checked ~ .gallery .card.third ~ .card,
+#card4:checked ~ .gallery .card.fourth ~ .card,
+#card5:checked ~ .gallery .card.fifth ~ .card,
+#card6:checked ~ .gallery .card.sixth ~ .card,
+#card7:checked ~ .gallery .card.seventh ~ .card
 {
     transform: rotateY(-20deg) skew(0, -5deg);
     -webkit-transform: rotateY(-20deg) skew(0, -5deg);
 }
 
-#first:checked ~ .gallery [for='first'],
-#second:checked ~ .gallery [for='second'],
-#third:checked ~ .gallery [for='third'],
-#fourth:checked ~ .gallery [for='fourth'],
-#fifth:checked ~ .gallery [for='fifth'],
-#sixth:checked ~ .gallery [for='sixth'],
-#seventh:checked ~ .gallery [for='seventh']
+#card1:checked ~ .gallery .card.first,
+#card2:checked ~ .gallery .card.second,
+#card3:checked ~ .gallery .card.third,
+#card4:checked ~ .gallery .card.fourth,
+#card5:checked ~ .gallery .card.fifth,
+#card6:checked ~ .gallery .card.sixth,
+#card7:checked ~ .gallery .card.seventh
 {
     transform: rotateY(0) skew(0, 0);
     -webkit-transform: rotateY(0) skew(0, 0);
@@ -64,98 +77,233 @@ div.gallery
     left: 42vw;
 }
 
-#first:checked ~ .gallery [for='second'],
-#second:checked ~ .gallery [for='third'],
-#third:checked ~ .gallery [for='fourth'],
-#fourth:checked ~ .gallery [for='fifth'],
-#fifth:checked ~ .gallery [for='sixth'],
-#sixth:checked ~ .gallery [for='seventh']
+#card1:checked ~ .gallery .card.second,
+#card2:checked ~ .gallery .card.third,
+#card3:checked ~ .gallery .card.fourth,
+#card4:checked ~ .gallery .card.fifth,
+#card5:checked ~ .gallery .card.sixth,
+#card6:checked ~ .gallery .card.seventh
 {
     z-index: 6;
     left: 48vw;
 }
 
-#first:checked ~ .gallery [for='third'],
-#second:checked ~ .gallery [for='fourth'],
-#third:checked ~ .gallery [for='fifth'],
-#fourth:checked ~ .gallery [for='sixth'],
-#fifth:checked ~ .gallery [for='seventh']
+#card1:checked ~ .gallery .card.third,
+#card2:checked ~ .gallery .card.fourth,
+#card3:checked ~ .gallery .card.fifth,
+#card4:checked ~ .gallery .card.sixth,
+#card5:checked ~ .gallery .card.seventh
 {
     z-index: 5;
     left: 54vw;
 }
 
-#first:checked ~ .gallery [for='fourth'],
-#second:checked ~ .gallery [for='fifth'],
-#third:checked ~ .gallery [for='sixth'],
-#fourth:checked ~ .gallery [for='seventh']
+#card1:checked ~ .gallery .card.fourth,
+#card2:checked ~ .gallery .card.fifth,
+#card3:checked ~ .gallery .card.sixth,
+#card4:checked ~ .gallery .card.seventh
 {
     z-index: 4;
     left: 60vw;
 }
 
-#first:checked ~ .gallery [for='fifth'],
-#second:checked ~ .gallery [for='sixth'],
-#third:checked ~ .gallery [for='seventh']
+#card1:checked ~ .gallery .card.fifth,
+#card2:checked ~ .gallery .card.sixth,
+#card3:checked ~ .gallery .card.seventh
 {
     z-index: 3;
     left: 66vw;
 }
 
-#first:checked ~ .gallery [for='sixth'],
-#second:checked ~ .gallery [for='seventh']
+#card1:checked ~ .gallery .card.sixth,
+#card2:checked ~ .gallery .card.seventh
 {
     z-index: 2;
     left: 72vw;
 }
 
-#first:checked ~ .gallery [for='seventh']
+#card1:checked ~ .gallery .card.seventh
 {
     z-index: 1;
     left: 78vw;
 }
 
-#second:checked ~ .gallery [for='first'],
-#third:checked ~ .gallery [for='second'],
-#fourth:checked ~ .gallery [for='third'],
-#fifth:checked ~ .gallery [for='fourth'],
-#sixth:checked ~ .gallery [for='fifth'],
-#seventh:checked ~ .gallery [for='sixth']
+#card2:checked ~ .gallery .card.first,
+#card3:checked ~ .gallery .card.second,
+#card4:checked ~ .gallery .card.third,
+#card5:checked ~ .gallery .card.fourth,
+#card6:checked ~ .gallery .card.fifth,
+#card7:checked ~ .gallery .card.sixth
 {
     left: 36vw;
 }
 
-#third:checked ~ .gallery [for='first'],
-#fourth:checked ~ .gallery [for='second'],
-#fifth:checked ~ .gallery [for='third'],
-#sixth:checked ~ .gallery [for='fourth'],
-#seventh:checked ~ .gallery [for='fifth']
+#card3:checked ~ .gallery .card.first,
+#card4:checked ~ .gallery .card.second,
+#card5:checked ~ .gallery .card.third,
+#card6:checked ~ .gallery .card.fourth,
+#card7:checked ~ .gallery .card.fifth
 {
     left: 30vw;
 }
 
-#fourth:checked ~ .gallery [for='first'],
-#fifth:checked ~ .gallery [for='second'],
-#sixth:checked ~ .gallery [for='third'],
-#seventh:checked ~ .gallery [for='fourth']
+#card4:checked ~ .gallery .card.first,
+#card5:checked ~ .gallery .card.second,
+#card6:checked ~ .gallery .card.third,
+#card7:checked ~ .gallery .card.fourth
 {
     left: 24vw;
 }
 
-#fifth:checked ~ .gallery [for='first'],
-#sixth:checked ~ .gallery [for='second'],
-#seventh:checked ~ .gallery [for='third']
+#card5:checked ~ .gallery .card.first,
+#card6:checked ~ .gallery .card.second,
+#card7:checked ~ .gallery .card.third
 {
     left: 18vw;
 }
 
-#sixth:checked ~ .gallery [for='first'],
-#seventh:checked ~ .gallery [for='second']
+#card6:checked ~ .gallery .card.first,
+#card7:checked ~ .gallery .card.second
 {
     left: 12vw;
 }
 
-#seventh:checked ~ .gallery [for='first']
+#card7:checked ~ .gallery .card.first
 {
     left: 6vw;
+}
+
+.hover.background
+{
+    position: absolute;
+    width: 16vw;
+    height: 16vw;
+    background-color: black;
+    opacity: 0.5;
+    top: 0;
+    z-index: 8;
+}
+
+.hover.circle
+{
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    width: 12vw;
+    height: 12vw;
+    border: 1vw solid white;
+    border-radius: 100vw;
+    top: 1vw;
+    z-index: 9;
+}
+
+.hover.text
+{
+    position: absolute;
+    top: 0;
+    color: white;
+    font-size: 2vw;
+    text-align: center;
+    width: 16vw;
+    z-index: 10;
+    padding: 7vw 0 7vw 0;
+}
+
+.hover
+{
+    display: none;
+}
+
+#none-recipe:checked ~ #card1:checked ~ .gallery .card.first:hover .hover,
+#none-recipe:checked ~ #card2:checked ~ .gallery .card.second:hover .hover,
+#none-recipe:checked ~ #card3:checked ~ .gallery .card.third:hover .hover,
+#none-recipe:checked ~ #card4:checked ~ .gallery .card.fourth:hover .hover,
+#none-recipe:checked ~ #card5:checked ~ .gallery .card.fifth:hover .hover,
+#none-recipe:checked ~ #card6:checked ~ .gallery .card.sixth:hover .hover,
+#none-recipe:checked ~ #card7:checked ~ .gallery .card.seventh:hover .hover
+{
+    display: block;
+}
+
+.recipe
+{
+    position: absolute;
+    top: 0;
+    width: 16vw;
+    height: 16vw;
+    background-color: white;
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    /*z-index: -1;*/
+    visibility: hidden;
+    transition-property: visibility;
+    transition-delay: .3s;
+}
+#recipe1:checked ~ .gallery .recipe.first,
+#recipe2:checked ~ .gallery .recipe.second,
+#recipe3:checked ~ .gallery .recipe.third,
+#recipe4:checked ~ .gallery .recipe.fourth,
+#recipe5:checked ~ .gallery .recipe.fifth,
+#recipe6:checked ~ .gallery .recipe.sixth,
+#recipe7:checked ~ .gallery .recipe.seventh
+{
+    visibility: visible;
+    transition-delay: .3s;
+}
+
+.gallery .card > :not(.recipe)
+{
+    transition-property: visibility, z-index;
+    transition-delay: .3s;
+}
+
+#recipe1:checked ~ .gallery .card.first > :not(.recipe),
+#recipe2:checked ~ .gallery .card.second > :not(.recipe),
+#recipe3:checked ~ .gallery .card.third > :not(.recipe),
+#recipe4:checked ~ .gallery .card.fourth > :not(.recipe),
+#recipe5:checked ~ .gallery .card.fifth > :not(.recipe),
+#recipe6:checked ~ .gallery .card.sixth > :not(.recipe),
+#recipe7:checked ~ .gallery .card.seventh > :not(.recipe)
+{
+    visibility: hidden;
+}
+
+#recipe1:checked ~ .gallery .card.first,
+#recipe2:checked ~ .gallery .card.second,
+#recipe3:checked ~ .gallery .card.third,
+#recipe4:checked ~ .gallery .card.fourth,
+#recipe5:checked ~ .gallery .card.fifth,
+#recipe6:checked ~ .gallery .card.sixth,
+#recipe7:checked ~ .gallery .card.seventh
+{
+    transform:
+        translate(0, -100%)
+        rotateX(180deg)
+        scale(2)
+        translate(0, -50%)
+        !important;
+    -webkit-transform:
+        translate(0, -100%)
+        rotateX(180deg)
+        scale(2)
+        translate(0, -50%)
+        !important;
+    transition-property: transform, -webkit-transform;
+    transition-timing-function: linear;
+    transition-duration: 0.7s, 0.7s, 0.7s;
+}
+
+.close-recipe
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+}
+
+.hover
+{
+    transition-property: z-index;
+    transition-timing-function: linear;
+    transition-duration: 0.7s, 0.7s, 0.7s;
 }
