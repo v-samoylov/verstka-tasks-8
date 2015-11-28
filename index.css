@@ -21,7 +21,7 @@ input
     box-shadow: 1px 1px 15px 2px #888;
     transition-property: left, transform, -webkit-transform;
     transition-timing-function: linear;
-    transition-duration: 0.7s, 0.7s, 0.7s;
+    transition-duration: .7s, .7s, .7s;
 }
 
 .card > label
@@ -179,7 +179,7 @@ div.gallery
     width: 16vw;
     height: 16vw;
     background-color: black;
-    opacity: 0.5;
+    opacity: .5;
     top: 0;
     z-index: 8;
 }
@@ -193,7 +193,6 @@ div.gallery
     height: 12vw;
     border: 1vw solid white;
     border-radius: 100vw;
-    top: 1vw;
     z-index: 9;
 }
 
@@ -290,7 +289,7 @@ div.gallery
         !important;
     transition-property: transform, -webkit-transform;
     transition-timing-function: linear;
-    transition-duration: 0.7s, 0.7s, 0.7s;
+    transition-duration: .7s, .7s, .7s;
 }
 
 .close-recipe
@@ -305,5 +304,5 @@ div.gallery
 {
     transition-property: z-index;
     transition-timing-function: linear;
-    transition-duration: 0.7s, 0.7s, 0.7s;
+    transition-duration: .7s, .7s, .7s;
 }
