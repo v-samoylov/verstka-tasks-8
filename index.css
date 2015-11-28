@@ -233,11 +233,12 @@ div.gallery
     background-color: white;
     transform: rotateX(180deg);
     -webkit-transform: rotateX(180deg);
-    /*z-index: -1;*/
     visibility: hidden;
     transition-property: visibility;
     transition-delay: .3s;
+    z-index: 20;
 }
+
 #recipe1:checked ~ .gallery .recipe.first,
 #recipe2:checked ~ .gallery .recipe.second,
 #recipe3:checked ~ .gallery .recipe.third,
@@ -253,7 +254,7 @@ div.gallery
 .gallery .card > :not(.recipe)
 {
     transition-property: visibility, z-index;
-    transition-delay: .3s;
+    transition-delay: .7s;
 }
 
 #recipe1:checked ~ .gallery .card.first > :not(.recipe),
@@ -280,12 +281,14 @@ div.gallery
         rotateX(180deg)
         scale(2)
         translate(0, -50%)
+        rotateZ(0)
         !important;
     -webkit-transform:
         translate(0, -100%)
         rotateX(180deg)
         scale(2)
         translate(0, -50%)
+        rotateZ(0)
         !important;
     transition-property: transform, -webkit-transform;
     transition-timing-function: linear;
@@ -305,4 +308,24 @@ div.gallery
     transition-property: z-index;
     transition-timing-function: linear;
     transition-duration: .7s, .7s, .7s;
+}
+
+.fullscreen.background
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: .8;
+    visibility: hidden;
+    position: fixed;
+    top: -35vh;
+    transition-property: visibility;
+    transition-delay: .7s;
+    z-index: -1;
+}
+
+#none-recipe:not(:checked) ~ .gallery .fullscreen.background
+{
+    visibility: visible;
+    z-index: 6;
 }
