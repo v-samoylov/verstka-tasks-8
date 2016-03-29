@@ -319,13 +319,13 @@ div.gallery
     visibility: hidden;
     position: fixed;
     top: -35vh;
-    transition-property: visibility;
-    transition-delay: .7s;
     z-index: -1;
 }
 
 #none-recipe:not(:checked) ~ .gallery .fullscreen.background
 {
+    transition-property: visibility;
+    transition-delay: .7s;
     visibility: visible;
     z-index: 6;
 }
